@@ -48,7 +48,7 @@ class Rectangle(Forme):
         # Dessine le rectangle sur l'écran
         arcade.draw_rectangle_filled(self.x, self.y, self.width, self.height, self.color)
 
-#defini
+#definition de la classe mygame
 class MyGame(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
@@ -60,14 +60,14 @@ class MyGame(arcade.Window):
 
     def on_mouse_press(self, x, y, button, modifiers):
         if button == arcade.MOUSE_BUTTON_LEFT:
-            # Ajoute une balle à l'endroit du clic
+            # Ajoute une balle à l'endroit du clic gauche
             self.formes.append(Balle(x, y, 2, 2, 20, arcade.color.RED))
         elif button == arcade.MOUSE_BUTTON_RIGHT:
-            # Ajoute un rectangle à l'endroit du clic
+            # Ajoute un rectangle à l'endroit du clic droit
             self.formes.append(Rectangle(x, y, 3, 3, 40, 30, arcade.color.GREEN))
 
     def on_draw(self):
-        # Débute le rendu
+        # Débute le render
         arcade.start_render()
 
         # Dessine toutes les formes
@@ -84,7 +84,7 @@ def main():
     width = 800
     height = 600
     title = "Ajout de Balles et Rectangles"
-    # Crée une instance de la classe MyGame
+    # Crée une instance de la classe MyGame (la fenetre ou le jeu / simulation se deroule)
     window = MyGame(width, height, title)
     # Démarre la boucle de jeu d'Arcade
     arcade.run()
