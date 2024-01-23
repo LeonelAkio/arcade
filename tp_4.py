@@ -1,5 +1,9 @@
+#cree par leonel akio briones
+
+#importation de la librairie arcade
 import arcade
 
+#definition de la classe forme
 class Forme:
     def __init__(self, x, y, change_x, change_y, color):
         # Initialise les attributs communs à toutes les formes
@@ -21,7 +25,7 @@ class Forme:
             self.change_y *= -1
 
 
-
+#definition de la classe balle
 class Balle(Forme):
     def __init__(self, x, y, change_x, change_y, rayon, color):
         # Initialise les attributs spécifiques à la balle
@@ -32,6 +36,7 @@ class Balle(Forme):
         # Dessine la balle sur l'écran
         arcade.draw_circle_filled(self.x, self.y, self.rayon, self.color)
 
+#definition de la classe rectangle
 class Rectangle(Forme):
     def __init__(self, x, y, change_x, change_y, width, height, color):
         # Initialise les attributs spécifiques au rectangle
@@ -43,6 +48,7 @@ class Rectangle(Forme):
         # Dessine le rectangle sur l'écran
         arcade.draw_rectangle_filled(self.x, self.y, self.width, self.height, self.color)
 
+#defini
 class MyGame(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
